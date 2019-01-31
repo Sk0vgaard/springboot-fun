@@ -1,6 +1,18 @@
 package com.example.springbootfun.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+// Entity annotation marks this class as being an entity so it can be mapped to a table.
+@Entity
 public class TreatmentBooking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // For the id to be generated sequentially.
+    private long id;
+
     private String treatmentName;
     private double priceForTreatment;
     private double timeOfTreatment;
@@ -14,6 +26,10 @@ public class TreatmentBooking {
         this.priceForTreatment = priceForTreatment;
         this.numberOfTreatments = numberOfTreatments;
         this.timeOfTreatment = timeOfTreatment;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public double getTimeOfTreatment() {
