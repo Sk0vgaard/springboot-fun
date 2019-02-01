@@ -17,8 +17,6 @@
 
     init();
 
-    console.log('TESTING');
-
     function init(){
       getAll();
     }
