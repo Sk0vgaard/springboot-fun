@@ -15,25 +15,25 @@ public class TreatmentBooking {
 
     private String treatmentName;
     private double priceForTreatment;
-    private double timeOfTreatment;
+    private double lengthOfTreatment;
     private int numberOfTreatments;
 
     // Empty default constructer for spring to create a object based on the input send via frontend.
     public TreatmentBooking() {}
 
-    public TreatmentBooking(String treatmentName, double priceForTreatment, double timeOfTreatment, int numberOfTreatments) {
+    public TreatmentBooking(String treatmentName, double priceForTreatment, double lengthOfTreatment, int numberOfTreatments) {
         this.treatmentName = treatmentName;
         this.priceForTreatment = priceForTreatment;
         this.numberOfTreatments = numberOfTreatments;
-        this.timeOfTreatment = timeOfTreatment;
+        this.lengthOfTreatment = lengthOfTreatment;
     }
 
     public long getId() {
         return id;
     }
 
-    public double getTimeOfTreatment() {
-        return timeOfTreatment;
+    public double getLengthOfTreatment() {
+        return lengthOfTreatment;
     }
 
     public String getTreatmentName() {
@@ -48,7 +48,5 @@ public class TreatmentBooking {
         return numberOfTreatments;
     }
 
-    public double getTotalPrice() {
-        return priceForTreatment * numberOfTreatments;
-    }
+    public double getTotalPrice() { return priceForTreatment * numberOfTreatments; }
 }
