@@ -13,6 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/bookings")
+// For visual json doc visit: @see http://localhost:8080/jsondoc-ui.html#
+// Insert http://localhost:8080/jsondoc in the input field.
 @Api(name = "Treatment Booking API", description = "Provides a list of methods that manage treatment bookings", stage = ApiStage.RC)
 public class TreatmentController {
 
