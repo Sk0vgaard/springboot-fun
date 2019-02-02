@@ -18,11 +18,31 @@
                 <a class="navbar-brand" href="#">
                     CB Ergoterapi
                 </a>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="/treatments">Treatments</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/former-clients">Treatments</a>
+                    </li>
+                </ul>
             </div>
             <!--In online mode the text attribute will be used-->
-            <p class="navbar-text navbar-right" th:text="'Signed in as ' + ${username}" style="margin-right: 10px">
-                Signed in as Anonymous
-            </p>
+            <a class="navbar-text navbar-right" th:text="'Logout as ' + ${username}"
+               style="margin-right: 10px;
+                    cursor: pointer;"
+               type="hidden">
+                Logout
+            </a>
         </div>
     </nav>
 </header>

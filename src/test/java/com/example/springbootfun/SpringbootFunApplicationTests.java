@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -32,24 +31,24 @@ public class SpringbootFunApplicationTests {
     @Before
     public void initDb() {
         {
-            User newUser = new User(
+            User client = new User(
                     "Rikke",
                     "Baden",
                     "Rikke Baden",
                     "123456",
                     "Rikke_baden@gmail.com",
                     "87654321");
-            userService.createUser(newUser);
+            userService.createUser(client);
         }
         {
-            User newUser = new User(
+            User admin = new User(
                     "Mathias",
                     "Skovgaard",
                     "Mathias Skovgaard",
                     "654321",
                     "MathiasSkovgaardRasmussen@gmail.com",
                     "12345678");
-            userService.createUser(newUser);
+            userService.createUser(admin);
         }
 
         Booking userBooking = new Booking("18:01:33, 02/02/2019", "Håndterapi", "12/02/2019, 16:00", "Mange smerter.");
