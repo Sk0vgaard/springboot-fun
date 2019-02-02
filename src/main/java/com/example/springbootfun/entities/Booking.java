@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class BookedTreatment {
+public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id; // Primary key
@@ -19,9 +19,9 @@ public class BookedTreatment {
     @JoinColumn(name = "USER_EMAIL")
     private User user;
 
-    public BookedTreatment() { }
+    public Booking() { }
 
-    public BookedTreatment(String date, String treatment, String bookingDate, String description, User user) {
+    public Booking(String date, String treatment, String bookingDate, String description, User user) {
         this.date = date;
         this.treatment = treatment;
         this.bookingDate = bookingDate;
@@ -29,7 +29,7 @@ public class BookedTreatment {
         this.user = user;
     }
 
-    public BookedTreatment(String date, String treatment, String bookingDate, String description) {
+    public Booking(String date, String treatment, String bookingDate, String description) {
         this.date = date;
         this.treatment = treatment;
         this.bookingDate = bookingDate;

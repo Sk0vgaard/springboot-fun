@@ -1,4 +1,4 @@
-package com.example.springbootfun.Database;
+package com.example.springbootfun.database;
 
 import com.example.springbootfun.entities.Treatment;
 import com.example.springbootfun.repositories.TreatmentRepository;

@@ -25,7 +25,7 @@ public class User {
     private String phoneNumber;
     // Specifies the owner of the relationship in this case the user is the owner of this relationship.
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<BookedTreatment> bookedTreatments;
+    private List<Booking> bookings;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLES", joinColumns = {
             @JoinColumn(name = "USER_EMAIL", referencedColumnName = "email")
@@ -77,12 +77,12 @@ public class User {
         this.password = password;
     }
 
-    public List<BookedTreatment> getBookedTreatments() {
-        return bookedTreatments;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setBookedTreatments(List<BookedTreatment> bookedTreatments) {
-        this.bookedTreatments = bookedTreatments;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public List<Role> getRoles() {
