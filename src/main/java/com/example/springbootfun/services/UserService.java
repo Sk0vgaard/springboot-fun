@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -45,8 +46,8 @@ public class UserService {
         user.setPassword(encoder.encode(user.getPassword()));
     }
 
-//    public User findUserByEmail(String email) {
-//
-//        return userRepository.findOne(email);
-//    }
+    public User findUserByEmail(String email) {
+
+        return userRepository.findById(email).orElse(null);
+    }
 }
