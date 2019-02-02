@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id; // Primary key
+    private long id; // Primary key
     @NotEmpty
     private String date;
     @NotEmpty
@@ -36,11 +36,11 @@ public class Booking {
         this.description = description;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
