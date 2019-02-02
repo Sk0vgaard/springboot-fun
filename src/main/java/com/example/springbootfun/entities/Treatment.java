@@ -1,4 +1,4 @@
-package com.example.springbootfun.models;
+package com.example.springbootfun.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 // Entity annotation marks this class as being an entity so it can be mapped to a table.
 @Entity
-public class TreatmentBooking {
+public class Treatment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // For the id to be generated sequentially.
@@ -19,9 +19,9 @@ public class TreatmentBooking {
     private int numberOfTreatments;
 
     // Empty default constructer for spring to create a object based on the input send via frontend.
-    public TreatmentBooking() {}
+    public Treatment() {}
 
-    public TreatmentBooking(String treatmentName, double priceForTreatment, double lengthOfTreatment, int numberOfTreatments) {
+    public Treatment(String treatmentName, double priceForTreatment, double lengthOfTreatment, int numberOfTreatments) {
         this.treatmentName = treatmentName;
         this.priceForTreatment = priceForTreatment;
         this.numberOfTreatments = numberOfTreatments;

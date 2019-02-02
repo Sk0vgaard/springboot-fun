@@ -1,7 +1,7 @@
 package com.example.springbootfun.Database;
 
-import com.example.springbootfun.models.TreatmentBooking;
-import com.example.springbootfun.repositories.BookingRepository;
+import com.example.springbootfun.entities.Treatment;
+import com.example.springbootfun.repositories.TreatmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
@@ -15,22 +15,22 @@ import java.util.List;
 @Order(1) // Can be used if there is more than one CommandLineRunner, and if one has to run before another.
 public class DatabaseSeeder implements CommandLineRunner {
 
-    private BookingRepository bookingRepository;
+    private TreatmentRepository treatmentRepository;
 
     @Autowired // The @Autowired annotation allows you to skip configurations elsewhere fx in the XML file.
-    public DatabaseSeeder(BookingRepository bookingRepository) {
-        this.bookingRepository = bookingRepository;
+    public DatabaseSeeder(TreatmentRepository treatmentRepository) {
+        this.treatmentRepository = treatmentRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-        List<TreatmentBooking> bookings = new ArrayList<>();
+        List<Treatment> bookings = new ArrayList<>();
 
-        bookings.add(new TreatmentBooking("Akupunktur", 200, 25, 1));
-        bookings.add(new TreatmentBooking("Håndterapi", 500, 45, 2));
-        bookings.add(new TreatmentBooking("Tapening", 249, 30, 1));
+        bookings.add(new Treatment("Tapening", 249, 30, 1));
+        bookings.add(new Treatment("Akupunktur", 200, 25, 1));
+        bookings.add(new Treatment("Håndterapi", 500, 45, 2));
 
-        bookingRepository.saveAll(bookings);
+        treatmentRepository.saveAll(bookings);
     }
 }
